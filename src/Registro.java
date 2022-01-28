@@ -67,7 +67,11 @@ public static void registroAnimal(){
     }
 
 public static void editarAnimal(){
-        System.out.print("Ingrese la posicion: ");
+     System.out.print("Ingrese el nombre cientifico del animal a editar");
+     String nombreCient = sc.nextLine();
+      for(Animal eph: listAnimal) {
+          if (eph!=null && eph.getNombreCient()== nombreCient){
+             System.out.print("Ingrese la posicion: ");
         int pos = sc.nextInt();
         System.out.println("1. Un atributo");
         System.out.println("2. Todos los atributos");
@@ -77,10 +81,13 @@ public static void editarAnimal(){
             editarUnAtributo(pos);
         else if(opcion == 2)
             editarAtributos(pos);
+          }
+      }
+        
     }
 
 public static void editarUnAtributo(int pos){
-    
+     
        System.out.println("1. Nombre Cientifico");
         System.out.println("2. Nombre Comun");
         System.out.println("3. Habitat ");
@@ -114,6 +121,8 @@ public static void editarUnAtributo(int pos){
         }
     }
 public static void editarAtributos(int pos){
+  
+    
         System.out.print("Nombre Cientiefico: ");
         listAnimal.get(pos).setNombreCient(sc.next());
         System.out.print("Nombre comun: ");
