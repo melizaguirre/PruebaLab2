@@ -19,11 +19,32 @@ public class Registro {
         
         System.out.println(" ***** M E N U *****");
         System.out.println("1. Registrar Animal");
-        System.out.println("2. Editar\n" +
+        System.out.println("2. Editar Animal\n" +
                             "3. Eliminar animal\n" +
-                            "4. Imprimir\n" +
+                            "4. Alimentat Animal\n"+
+                            "5. Imprimir\n" +
                             "Ingrese la opcion: ");
         
+    }
+    public static void opciones(int opcion){
+        if(opcion == 0)
+            System.exit(0);
+        else if(opcion == 1)
+            registroAnimal();
+        else if(opcion == 2)
+            editarAnimal();
+        else if(opcion == 3)
+            crearAlumnos();
+        else if(opcion == 4)
+            editarAlumno();
+        else if(opcion == 5)
+            eliminarAlumno();
+        else if(opcion == 6)
+            listarAlumnos();
+        else if(opcion == 7)
+            miPerfil();
+        else if(opcion == 8)
+            adminRandom();
     }
 
 public static void registroAnimal(){
@@ -59,6 +80,7 @@ public static void editarAnimal(){
     }
 
 public static void editarUnAtributo(int pos){
+    
        System.out.println("1. Nombre Cientifico");
         System.out.println("2. Nombre Comun");
         System.out.println("3. Habitat ");
@@ -110,5 +132,10 @@ public static void editarAtributos(int pos){
 public static void eliminarAnimal(){
         System.out.print("Posicion: ");
         listAnimal.remove(sc.nextInt());
+    }
+public static void listarAnimales(){
+        for (Animal animales : listAnimal) {
+            System.out.println(animales.toString());
+        }
     }
 }
