@@ -142,9 +142,36 @@ public static void eliminarAnimal(){
         System.out.print("Posicion: ");
         listAnimal.remove(sc.nextInt());
     }
+public static void ListaAnimal(){
+        System.out.println("1. Imprimir por posicion");
+        System.out.println("2. Imprimir lista completa");
+        System.out.println("2. Imprimir por nombre cientifico");
+        System.out.print("Ingrese la opcion: ");
+        int opcion = sc.nextInt();
+        if(opcion == 1){
+            System.out.print("Ingrese la posicion: ");
+            int pos = sc.nextInt();
+        }else if(opcion == 2) {
+            listarAnimales();
+        }else if (opcion == 3) {
+            
+        }
+}      
+      
+
 public static void listarAnimales(){
         for (Animal animales : listAnimal) {
             System.out.println(animales.toString());
         }
     }
+
+public static void ListCient(){
+    System.out.print("Ingrese el nombre cientifico del animal a editar");
+     String nombreCient = sc.nextLine();
+      for(Animal eph: listAnimal) {
+          if (eph!=null && eph.getNombreCient()== nombreCient){
+              
+          }
+      }
+}
 }
