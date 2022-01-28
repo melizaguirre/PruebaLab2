@@ -17,6 +17,13 @@ public class Registro {
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         
+        System.out.println(" ***** M E N U *****");
+        System.out.println("1. Registrar Animal");
+        System.out.println("2. Editar\n" +
+                            "3. Eliminar animal\n" +
+                            "4. Imprimir\n" +
+                            "Ingrese la opcion: ");
+        
     }
 
 public static void registroAnimal(){
@@ -99,5 +106,9 @@ public static void editarAtributos(int pos){
         listAnimal.get(pos).setDistribucion(sc.next());
         System.out.println("Vida: ");
         listAnimal.get(pos).setVida(sc.nextInt());
+    }
+public static void eliminarAnimal(){
+        System.out.print("Posicion: ");
+        listAnimal.remove(sc.nextInt());
     }
 }
