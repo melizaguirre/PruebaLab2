@@ -21,7 +21,7 @@ public class Registro {
         System.out.println("1. Registrar Animal");
         System.out.println("2. Editar Animal\n" +
                             "3. Eliminar animal\n" +
-                            "4. Alimentat Animal\n"+
+                            "4. Alimentar Animal\n"+
                             "5. Imprimir\n" +
                             "Ingrese la opcion: ");
         
@@ -34,17 +34,18 @@ public class Registro {
         else if(opcion == 2)
             editarAnimal();
         else if(opcion == 3)
-            crearAlumnos();
+            eliminarAnimal();
         else if(opcion == 4)
-            editarAlumno();
+            Alimentacion();
         else if(opcion == 5)
-            eliminarAlumno();
-        else if(opcion == 6)
-            listarAlumnos();
-        else if(opcion == 7)
-            miPerfil();
-        else if(opcion == 8)
-            adminRandom();
+            ListaAnimal();
+       
+    }
+    
+    public static void defaultAni(){
+        listAnimal.add(new Animal("Elephantidae", "Elefante", "Raices", "Bosque Africano", "La trompa de un elefante cuenta con alrededor de 40,000 músculos", "desde el sur de China e Indonesia occidental hasta las costas del golfo Pérsico ", 10));
+        listAnimal.add(new Animal("Lepidoptera", "Mariposa", "Regiones Tropicales", "Nectar de flores","Son artrópodos e insectos","En todos los continentes menos en la Antártida",29));
+        listAnimal.add(new Animal("Canis lupus familiaris", "Perro", "Lugares templados", "Carne","capacidad de respuesta Deseos de agradar","Especie invasora", 8 ));
     }
 
 public static void registroAnimal(){
@@ -173,5 +174,10 @@ public static void ListCient(){
               
           }
       }
+}
+
+public static void Alimentacion(){
+   System.out.print("Seleccion el Animal a alimentar");
+  
 }
 }
