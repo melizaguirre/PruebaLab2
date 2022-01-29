@@ -14,9 +14,16 @@ import java.util.Scanner;
  */
 public class Registro {
     public static ArrayList<Animal> listAnimal = new ArrayList();
+    
     public static Scanner sc = new Scanner(System.in);
+    
     public static void main(String[] args) {
         
+        do{
+            opciones( menu() );
+        }while(true);
+    }
+       public static int menu(){ 
         System.out.println(" ***** M E N U *****");
         System.out.println("1. Registrar Animal");
         System.out.println("2. Editar Animal\n" +
@@ -24,7 +31,7 @@ public class Registro {
                             "4. Alimentar Animal\n"+
                             "5. Imprimir\n" +
                             "Ingrese la opcion: ");
-        
+        return sc.nextInt();
     }
     public static void opciones(int opcion){
         if(opcion == 0)
@@ -152,10 +159,11 @@ public static void ListaAnimal(){
         if(opcion == 1){
             System.out.print("Ingrese la posicion: ");
             int pos = sc.nextInt();
+            listAnimal.get(pos);
         }else if(opcion == 2) {
             listarAnimales();
         }else if (opcion == 3) {
-            
+            ListCient();
         }
 }      
       
@@ -171,13 +179,17 @@ public static void ListCient(){
      String nombreCient = sc.nextLine();
       for(Animal eph: listAnimal) {
           if (eph!=null && eph.getNombreCient()== nombreCient){
-              
+              eph.imprimir();
           }
       }
 }
 
 public static void Alimentacion(){
-   System.out.print("Seleccion el Animal a alimentar");
-  
-}
+   System.out.print("Selecciona el Animal a alimentar");
+   int pos = sc.nextInt();
+   System.out.print("Selecciona el Animal a deborar");
+   int posi = sc.nextInt();
+   listAnimal.get(pos).vida+=listAnimal.get(posi).vida;
+   listAnimal.remove(posi);
+   }
 }
